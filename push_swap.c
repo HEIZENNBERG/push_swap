@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 18:24:03 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/20 20:57:10 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,14 @@ int main(int ac, char **av)
 	stack *node;
 	char *str;
 	size_t words;
+	stack *test_push;
 	
     if (ac < 2)
         return (0);
     i = 1;
 	str = NULL;
 	list = NULL;
+	test_push = NULL;
     while (av[i])
     {
 		str = ft_strjoin(str , av[i]);
@@ -118,7 +120,7 @@ int main(int ac, char **av)
 		add_node(&list, node);
 		i--;
 	}
-	swap(&list);
+	reverse(&list);
 	stack *tmp = list;
 	while (tmp)
 	{

@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.c                                     :+:      :+:    :+:   */
+/*   rotate_instra.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/20 14:58:32 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 18:07:00 by onajem           ###   ########.fr       */
+/*   Created: 2024/12/20 20:29:44 by onajem            #+#    #+#             */
+/*   Updated: 2024/12/20 20:43:22 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap(stack **head)
+
+void rotate(stack **head)
 {
-    stack  *tmp;
-    
-    if (!head || !(*head) || !((*head)->next))
+    stack *tmp;
+    stack *last;
+
+    if (!head || !(*head) || !(*head)->next)
         return ;
-    tmp = (*head);
+    tmp = *head;
     (*head) = (*head)->next;
-    tmp->next = (*head)->next;
-    (*head)->next = tmp;
+    last = tail(*head);
+    last->next = tmp;
+    tmp->next = NULL;
 }
 
-void sa(stack **a)
+void ra(stack **a)
 {
-    swap(a);
-    write(1, "sa\n", 3);
-}
-void sb(stack **b)
-{
-    swap(b);
-    write(1, "sb\n", 3);
-}
-void ss(stack **a, stack **b)
-{
-    sa(a);
-    sb(b);
-    write(1, "ss\n", 3);
+    rotate(a);
+    write(1, "ra\n", 3);
 }
 
-// void pb(stack *a, stack *b)
-// {
-    
-// }
+void rb(stack **b)
+{
+    rotate(b);
+    write(1, "ra\n", 3);
+}
+
+void rr(stack **a, stack **b)
+{
+    rotate(a);
+    rotate(b);
+    write(1, "rr\n", 3);
+}

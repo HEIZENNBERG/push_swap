@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 20:56:41 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 18:04:05 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/20 20:56:19 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ typedef struct s_stack
     struct s_stack *next;
 }stack;
 
+void reverse(stack **head);
+void rotate(stack **head);
+stack *tail(stack *tmp);
+void push(stack **src, stack **dst);
 void    swap(stack **head);
 long	ft_atol(const char *nptr);
 stack   *node_init(long nb);

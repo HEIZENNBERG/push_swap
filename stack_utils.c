@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:19:01 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 14:53:32 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/20 20:33:09 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,11 @@ void	ft_lstclear(stack **lst)
 		free(*lst);
 		*lst = temp;
 	}
+}
+
+stack *tail(stack *tmp)
+{
+    while (tmp->next)
+        tmp = tmp->next;
+    return (tmp);
 }
