@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 12:29:08 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/20 15:41:14 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,17 @@ void gg()
 	system("leaks a.out");
 }
 
+
 int main(int ac, char **av)
 {
 	atexit(gg);
     size_t i;
-    char *str;
 	stack *list;
 	stack *node;
+	char *str;
+	size_t words;
 	
-    if (ac < 2)
+    if (ac < 2 || (ac == 2 && !av[0]))
         return (0);
     i = 1;
     while (av[i])
@@ -101,10 +103,10 @@ int main(int ac, char **av)
 		str = ft_strjoin(str , " ");
         i++;
     }
-	av = ft_split(str, ' ',  &i);
+	av = ft_split(str, ' ',  &words);
+	i = words;
 	while (i > 0)
 	{
-		// printf("%ld\n", ft_atol(av[i - 1]));
 		node = node_init(ft_atol(av[i - 1]));
 		if (!node)
 		{
@@ -116,6 +118,6 @@ int main(int ac, char **av)
 	}
 	ft_lstclear(&list);
 	free(str);
-	free_array(av, ac);
+	free_array(av, words);
     return (0);
 }
