@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 15:41:14 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/20 18:24:03 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,24 +79,26 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (free(s1), dest);
 }
 
-void gg()
-{
-	system("leaks a.out");
-}
+// void gg()
+// {
+// 	system("leaks a.out");
+// }
 
 
 int main(int ac, char **av)
 {
-	atexit(gg);
+	// atexit(gg);
     size_t i;
 	stack *list;
 	stack *node;
 	char *str;
 	size_t words;
 	
-    if (ac < 2 || (ac == 2 && !av[0]))
+    if (ac < 2)
         return (0);
     i = 1;
+	str = NULL;
+	list = NULL;
     while (av[i])
     {
 		str = ft_strjoin(str , av[i]);
@@ -116,6 +118,14 @@ int main(int ac, char **av)
 		add_node(&list, node);
 		i--;
 	}
+	swap(&list);
+	stack *tmp = list;
+	while (tmp)
+	{
+		printf("%d\n", tmp->nb);
+		tmp = tmp->next;
+	}
+	tmp = NULL;
 	ft_lstclear(&list);
 	free(str);
 	free_array(av, words);

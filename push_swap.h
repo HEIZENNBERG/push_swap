@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 20:56:41 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 14:55:47 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/20 18:04:05 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <libc.h>
 #include <limits.h>
+#include <unistd.h>
 
 typedef struct s_stack
 {
@@ -24,6 +24,7 @@ typedef struct s_stack
     struct s_stack *next;
 }stack;
 
+void    swap(stack **head);
 long	ft_atol(const char *nptr);
 stack   *node_init(long nb);
 void    add_node(stack **list, stack *node);
