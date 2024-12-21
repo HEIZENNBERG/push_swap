@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:19:01 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 20:33:09 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/21 17:10:18 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,19 @@ stack *tail(stack *tmp)
     while (tmp->next)
         tmp = tmp->next;
     return (tmp);
+}
+
+int size(stack *a)
+{
+    int i;
+    
+    if (!a)
+        return (0);
+    i = 0;
+    while (a)
+    {
+        a = a->next;
+        i++;
+    }
+    return (i);
 }

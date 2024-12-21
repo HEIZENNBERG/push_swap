@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:22:58 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 20:24:57 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/21 16:59:07 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void pa(stack **b, stack **a)
 void pb(stack **a, stack **b)
 {
     push(a, b);
-    write(1, "pa\n", 3);
+    write(1, "pb\n", 3);
 }

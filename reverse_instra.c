@@ -44,7 +44,7 @@ void rra(stack **a)
 void rrb(stack **b)
 {
     reverse(b);
-    write(1, "rra\n", 4);
+    write(1, "rrb\n", 4);
 }
 
 void rrr(stack **a, stack **b)
