@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 20:57:10 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/21 11:24:24 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,23 +84,17 @@ char	*ft_strjoin(char *s1, char *s2)
 // 	system("leaks a.out");
 // }
 
-
-int main(int ac, char **av)
+stack *create_stack(char **av)
 {
-	// atexit(gg);
-    size_t i;
 	stack *list;
 	stack *node;
 	char *str;
 	size_t words;
-	stack *test_push;
-	
-    if (ac < 2)
-        return (0);
-    i = 1;
+	size_t i;
+
 	str = NULL;
+	i = 1;
 	list = NULL;
-	test_push = NULL;
     while (av[i])
     {
 		str = ft_strjoin(str , av[i]);
@@ -115,12 +109,26 @@ int main(int ac, char **av)
 		if (!node)
 		{
 			write(1, "Error\n", 6);
-			break;
+			return (0);
 		}
 		add_node(&list, node);
 		i--;
 	}
-	reverse(&list);
+	free(str);
+	free_array(av, words);
+	return (list);
+}
+
+int main(int ac, char **av)
+{
+	stack *list;
+	
+    if (ac < 2)
+        return (0);
+
+	list = create_stack(av);
+
+	rotate(&list);
 	stack *tmp = list;
 	while (tmp)
 	{
@@ -129,7 +137,6 @@ int main(int ac, char **av)
 	}
 	tmp = NULL;
 	ft_lstclear(&list);
-	free(str);
-	free_array(av, words);
+
     return (0);
 }
