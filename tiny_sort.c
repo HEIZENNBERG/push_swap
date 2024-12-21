@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 11:29:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/21 12:00:56 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/21 12:58:18 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void tiny_sort(stack **a)
     if (!a || !(*a))
         return ;
     max = max_node(*a);
-    printf(" => %d\n", max->nb);
     if (max == *a)
         ra(a);
     else if ((*a)->next == max)

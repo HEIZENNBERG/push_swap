@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:22:34 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/20 11:53:04 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/21 13:03:08 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,16 @@ long	ft_atol(const char *nptr)
 		nptr++;
 	}
 	return (sum * sign);
+}
+
+int is_sorted(stack *a)
+{
+	int check;
+
+	check = 0;
+	while (a->next && a->nb < a->next->nb)
+		a = a->next;
+	if (!a->next)
+		check = 1;
+	return (check);
 }

@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/21 11:42:24 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/21 13:12:53 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,40 +102,54 @@ stack *create_stack(char **av)
         i++;
     }
 	av = ft_split(str, ' ',  &words);
+	free(str);
 	i = words;
-	while (i > 0)
+	while (i > 0 )
 	{
 		node = node_init(ft_atol(av[i - 1]));
 		if (!node)
 		{
-			write(1, "Error\n", 6);
+			// free array
+			write(2, "Error\n", 6);
 			return (0);
 		}
 		add_node(&list, node);
 		i--;
 	}
-	free(str);
 	free_array(av, words);
 	return (list);
+}
+
+void gg()
+{
+	system("leaks push_swap");
 }
 
 int main(int ac, char **av)
 {
 	stack *list;
 	
+	// atexit(gg);
     if (ac < 2)
         return (0);
+	else if (ac == 2 && !av[1][0])
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 
 	list = create_stack(av);
 
-	tiny_sort(&list);
-	stack *tmp = list;
-	while (tmp)
-	{
-		printf("%d\n", tmp->nb);
-		tmp = tmp->next;
-	}
-	tmp = NULL;
+	// tiny_sort(&list);
+	printf("$");
+	printf("%d", is_sorted(list));
+	// stack *tmp = list;
+	// while (tmp)
+	// {
+	// 	printf("%d\n", tmp->nb);
+	// 	tmp = tmp->next;
+	// }
+	// tmp = NULL;
 	ft_lstclear(&list);
 
     return (0);

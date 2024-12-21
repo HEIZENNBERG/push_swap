@@ -1,14 +1,12 @@
 
 
-SRC = push_swap_utils.c  stack_utils.c ft_split.c push_instra.c swap_instra.c rotate_instra.c reverse_instra.c tiny_sort.c
+SRC = push_swap.c push_swap_utils.c  stack_utils.c ft_split.c push_instra.c swap_instra.c rotate_instra.c reverse_instra.c tiny_sort.c 
 
 OBJ = ${SRC:.c=.o}
 
-LIBC = ar rcs
-
 CC = cc
 
-NAME = libftpushswap.a
+NAME = push_swap
 
 RM = rm -f
 
@@ -20,7 +18,7 @@ all : ${NAME}
 	${CC} ${GFLAGS} -c $< -o $@ 
 
 ${NAME} : ${OBJ}
-	${LIBC} ${NAME} ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
 
 clean : 
 	${RM} ${OBJ}  

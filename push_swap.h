@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 20:56:41 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/21 11:42:16 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/21 13:04:58 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 
 
 
-
+int is_sorted(stack *a);
 void    reverse(stack **head);
 void    rotate(stack **head);
 void    push(stack **src, stack **dst);
