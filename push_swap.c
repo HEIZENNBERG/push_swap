@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/21 13:12:53 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/21 13:23:32 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,8 @@ void gg()
 
 int main(int ac, char **av)
 {
-	stack *list;
+	stack *a;
+	stack *b;
 	
 	// atexit(gg);
     if (ac < 2)
@@ -138,19 +139,13 @@ int main(int ac, char **av)
 		return (1);
 	}
 
-	list = create_stack(av);
-
-	// tiny_sort(&list);
-	printf("$");
-	printf("%d", is_sorted(list));
-	// stack *tmp = list;
-	// while (tmp)
-	// {
-	// 	printf("%d\n", tmp->nb);
-	// 	tmp = tmp->next;
-	// }
-	// tmp = NULL;
-	ft_lstclear(&list);
-
+	a = create_stack(av);
+	if (is_sorted(a) == 0)
+	{
+		// if size==2 -> swap
+		// if size==3 -> tiny_sort
+		// else push_swap => create array sorted => push in b iwth median
+	}
+	ft_lstclear(&a);
     return (0);
 }
