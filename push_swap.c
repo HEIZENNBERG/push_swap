@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/21 11:24:24 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/21 11:42:24 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ int main(int ac, char **av)
 
 	list = create_stack(av);
 
-	rotate(&list);
+	tiny_sort(&list);
 	stack *tmp = list;
 	while (tmp)
 	{

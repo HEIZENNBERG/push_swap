@@ -1,6 +1,6 @@
 
 
-SRC = push_swap_utils.c stack_utils.c ft_split.c push_instra.c swap_instra.c rotate_instra.c reverse_instra.c
+SRC = push_swap_utils.c  stack_utils.c ft_split.c push_instra.c swap_instra.c rotate_instra.c reverse_instra.c tiny_sort.c
 
 OBJ = ${SRC:.c=.o}
 
