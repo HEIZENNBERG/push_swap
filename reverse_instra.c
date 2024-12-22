@@ -25,7 +25,7 @@ void reverse(stack **head)
     stack *last;
     stack *before_last;
 
-    if (!head || !(*head) || !(*head)->next)
+    if (!head || !(*head) || !(*head)->next || size(*head) <= 1)
         return ;
     
     before_last = before_tail(*head);

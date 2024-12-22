@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 20:56:41 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/21 15:55:56 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/22 21:05:22 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@
 
 typedef struct s_stack
 {
-    int nb;
     struct s_stack *next;
+    struct s_stack *target_node;
+    int nb;
+    int index;
+    int cost;
+    int lowest_cost;
+    int is_above_med; 
 }stack;
-
 
 
 void    reverse(stack **head);
@@ -46,6 +50,12 @@ void    sa(stack **a);
 void    sb(stack **b);
 void    ss(stack **a, stack **b);
 
+stack *min(stack *a);
+void	fill_a(stack **a, stack **b);
+stack  *get_low_cost(stack *a);
+void    set_cost(stack *b, int len_a,  int len_b);
+void    set_target_node(stack *a, stack *b);
+void    set_index(stack *a, int med);
 void    push_swap(stack **a, int *len);
 int     size(stack *a);
 int     is_sorted(stack *a);

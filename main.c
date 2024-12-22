@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/21 17:15:35 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/22 21:44:14 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,26 @@ char	*ft_strjoin(char *s1, char *s2)
 // 	system("leaks a.out");
 // }
 
+// int	is_valid(char *arg)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	if (arg[i] != '+' && arg[i] != '-' && !(arg[i] >= '0' && arg[i] <= '9'))
+// 		return (1);
+// 	if ((arg[i] == '+' || arg[i] == '-') && 
+// 	!(arg[i + 1] >= '0' && arg[i + 1] <= '9'))
+// 		return (1);
+// 	++i;
+// 	while (arg[i])
+// 	{
+// 		if (!(arg[i] >= '0' && arg[i] <= '9'))
+// 			return (1);
+// 		i++;
+// 	}
+// 	return (0);
+// }
+
 stack *create_stack(char **av)
 {
 	stack *list;
@@ -148,7 +168,6 @@ int main(int ac, char **av)
 			tiny_sort(&a);	
 		else
 			push_swap(&a, &len);
-		// else push_swap => create array sorted => push in b iwth median
 	}
 	ft_lstclear(&a);
     return (0);

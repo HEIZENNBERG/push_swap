@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 14:13:04 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/21 18:31:01 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/22 22:19:15 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,29 @@ static int fill_array(stack *a, int *arr, int *len)
     return (arr[i / 2]);
 }
 
-void push_swap(stack **a, int *len)
+void prepare_stacks(stack *a, stack *b, int len_a, int len_b)
+{
+    set_index(a, len_a / 2);
+    set_index(b, len_b / 2);
+    set_target_node(a, b);
+    set_cost(b, len_a, len_b);
+}
+
+static void	put_min_on_top(stack **a)
+{
+    stack *lowest;
+    
+    lowest = min(*a);
+	while ((*a)->nb != lowest->nb)
+	{
+		if (lowest->is_above_med == 1)
+			ra(a);
+		else
+			rra(a);
+	}
+}
+
+void push_swap(stack **a, int *len_a)
 {
     int *arr;
     int med;
@@ -64,29 +86,37 @@ void push_swap(stack **a, int *len)
     if (!a || !(*a))
         return ;
         
-    arr = (int *)malloc((*len) * sizeof(int));
+    arr = (int *)malloc((*len_a) * sizeof(int));
     if (!arr)
         return ;
     b = NULL;
-    med = fill_array(*a, arr, len);
+    med = fill_array(*a, arr, len_a);
     len_b = 0;
-    while (*len > 3 && is_sorted(*a) == 0)
+    while (*len_a > 3 && is_sorted(*a) == 0)
     {
         pb(a, &b);
         len_b++;
-        if (size(b) != 0)
-            {
-                if (b->nb < med)
-                    rrb(&b);
-            }
+        if (b->nb < med && size(b))
+            rb(&b);
+        (*len_a)--;
     }
-    stack *tmp;
-    tmp = b;
-    while (tmp)
+    tiny_sort(a);
+    while (b)   
     {
-        printf("%d\n", tmp->nb);
-        tmp = tmp->next;
+        prepare_stacks(*a, b, *len_a, len_b);
+        fill_a(a, &b);
     }
+    set_index(*a, *len_a / 2);
+    put_min_on_top(a);
+
+    // stack *tmp;
+    // tmp = *a;
+    // while (tmp)
+    // {
+    //     printf("%d\n", tmp->nb);
+    //     tmp = tmp->next;
+    // }
+    
     free(arr);
     ft_lstclear(&b);
 }

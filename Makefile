@@ -1,6 +1,6 @@
 
 
-SRC = main.c push_swap.c push_swap_utils.c  stack_utils.c ft_split.c push_instra.c swap_instra.c rotate_instra.c reverse_instra.c tiny_sort.c 
+SRC = main.c push_swap.c push_swap_utils.c  stack_utils.c ft_split.c push_instra.c swap_instra.c rotate_instra.c reverse_instra.c tiny_sort.c prepare_stack.c fill_a.c
 
 OBJ = ${SRC:.c=.o}
 

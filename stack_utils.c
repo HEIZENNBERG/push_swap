@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:19:01 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/21 17:10:18 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/22 20:34:56 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ stack *node_init(long nb)
     if (!node || nb > INT_MAX || nb < INT_MIN)
         return (NULL);
     node->nb = nb;
+    node->cost = 0;
+    node->index = 0;
+    node->is_above_med = 0;
+    node->target_node = NULL; 
     node->next = NULL;
     return (node);
 }
