@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 14:13:04 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/22 22:19:15 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/23 15:54:23 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,16 @@ void push_swap(stack **a, int *len_a)
     while (b)   
     {
         prepare_stacks(*a, b, *len_a, len_b);
-        fill_a(a, &b);
+        fill_a(a, &b, len_a, &len_b);
     }
     set_index(*a, *len_a / 2);
     put_min_on_top(a);
+    free(arr);
+    ft_lstclear(&b);
+}
 
+
+    
     // stack *tmp;
     // tmp = *a;
     // while (tmp)
@@ -116,7 +121,3 @@ void push_swap(stack **a, int *len_a)
     //     printf("%d\n", tmp->nb);
     //     tmp = tmp->next;
     // }
-    
-    free(arr);
-    ft_lstclear(&b);
-}

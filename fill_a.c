@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 20:27:18 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/22 21:18:03 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/23 15:51:05 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	put_node_top_both(stack **a, stack **b, stack *node_a, stack *node_b
 	}
 }
 
-void	fill_a(stack **a, stack **b)
+void	fill_a(stack **a, stack **b, int *len_a, int *len_b)
 {
     stack *lowest;
 
@@ -55,4 +55,6 @@ void	fill_a(stack **a, stack **b)
 	push_node(b, lowest, 'b');
 	push_node(a, lowest->target_node, 'a');
     pa(b, a);
+    *len_a = size(*a);
+    *len_b = size(*b);
 }

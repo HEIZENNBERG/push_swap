@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 20:56:41 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/22 21:05:22 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/23 15:45:34 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    sb(stack **b);
 void    ss(stack **a, stack **b);
 
 stack *min(stack *a);
-void	fill_a(stack **a, stack **b);
+void	fill_a(stack **a, stack **b, int *len_a, int *len_b);
 stack  *get_low_cost(stack *a);
 void    set_cost(stack *b, int len_a,  int len_b);
 void    set_target_node(stack *a, stack *b);
