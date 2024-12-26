@@ -6,39 +6,43 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:19:01 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/22 20:34:56 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/26 12:52:34 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-stack *node_init(long nb)
+t_stack	*node_init(char *str)
 {
-    stack *node;
+	t_stack	*node;
+	long	nb;
 
-    node = (stack *)malloc(sizeof(stack));
-    if (!node || nb > INT_MAX || nb < INT_MIN)
-        return (NULL);
-    node->nb = nb;
-    node->cost = 0;
-    node->index = 0;
-    node->is_above_med = 0;
-    node->target_node = NULL; 
-    node->next = NULL;
-    return (node);
+	if (!str || !is_valid(str))
+		return (NULL);
+	nb = ft_atol(str);
+	node = (t_stack *)malloc(sizeof(t_stack));
+	if (!node || nb > INT_MAX || nb < INT_MIN)
+		return (NULL);
+	node->nb = nb;
+	node->cost = 0;
+	node->index = 0;
+	node->is_above_med = 0;
+	node->target_node = NULL;
+	node->next = NULL;
+	return (node);
 }
 
-void add_node(stack **list, stack *node)
+void	add_node(t_stack **list, t_stack *node)
 {
-    if (!list || !node)
-        return ;
-    node->next = *list;
-    *list = node;
+	if (!list || !node)
+		return ;
+	node->next = *list;
+	*list = node;
 }
 
-void	ft_lstclear(stack **lst)
+void	ft_lstclear(t_stack **lst)
 {
-	stack	*temp;
+	t_stack	*temp;
 
 	if (!lst)
 		return ;
@@ -50,24 +54,24 @@ void	ft_lstclear(stack **lst)
 	}
 }
 
-stack *tail(stack *tmp)
+t_stack	*tail(t_stack *tmp)
 {
-    while (tmp->next)
-        tmp = tmp->next;
-    return (tmp);
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }
 
-int size(stack *a)
+int	size(t_stack *a)
 {
-    int i;
-    
-    if (!a)
-        return (0);
-    i = 0;
-    while (a)
-    {
-        a = a->next;
-        i++;
-    }
-    return (i);
+	int	i;
+
+	if (!a)
+		return (0);
+	i = 0;
+	while (a)
+	{
+		a = a->next;
+		i++;
+	}
+	return (i);
 }

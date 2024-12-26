@@ -6,34 +6,35 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 20:27:18 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/23 15:51:05 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/26 12:44:28 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void push_node(stack **ab, stack *node, char c)
+static void	push_node(t_stack **ab, t_stack *node, char c)
 {
-    if (!ab || !node || !(*ab))
-        return ;
-    while (*ab != node)
-    {
-        if (c  == 'a')
-        {
-            if (node->is_above_med == 1)
-                ra(ab);
-            else 
-                rra(ab);
-        }
-        else
-            if (node->is_above_med == 1)
-                rb(ab);
-            else 
-                rrb(ab);
-    }
+	if (!ab || !node || !(*ab))
+		return ;
+	while (*ab != node)
+	{
+		if (c == 'a')
+		{
+			if (node->is_above_med == 1)
+				ra(ab);
+			else
+				rra(ab);
+		}
+		else
+			if (node->is_above_med == 1)
+				rb(ab);
+		else
+			rrb(ab);
+	}
 }
 
-static void	put_node_top_both(stack **a, stack **b, stack *node_a, stack *node_b)
+static void	put_node_top_both(t_stack **a, t_stack **b, t_stack *node_a,
+t_stack *node_b)
 {
 	while (*a != node_a && *b != node_b)
 	{
@@ -46,15 +47,15 @@ static void	put_node_top_both(stack **a, stack **b, stack *node_a, stack *node_b
 	}
 }
 
-void	fill_a(stack **a, stack **b, int *len_a, int *len_b)
+void	fill_a(t_stack **a, t_stack **b, int *len_a, int *len_b)
 {
-    stack *lowest;
+	t_stack	*lowest;
 
-    lowest = get_low_cost(*b);
-    put_node_top_both(a, b, lowest->target_node, lowest);
+	lowest = get_low_cost(*b);
+	put_node_top_both(a, b, lowest->target_node, lowest);
 	push_node(b, lowest, 'b');
 	push_node(a, lowest->target_node, 'a');
-    pa(b, a);
-    *len_a = size(*a);
-    *len_b = size(*b);
+	pa(b, a);
+	*len_a = size(*a);
+	*len_b = size(*b);
 }
