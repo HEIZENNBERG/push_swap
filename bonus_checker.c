@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 17:57:45 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 20:23:12 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/27 18:25:50 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,28 +63,28 @@ static int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 static int set_instra(char *line, t_stack ***a, t_stack ***b)
 {
-    if (ft_strncmp(line, "sa\n", 4) == 0)
-		sa(a);
-	else if (ft_strncmp(line, "sb\n", 4) == 0)
-		sb(b);
-	else if (ft_strncmp(line, "ss\n", 4) == 0)
-		ss(a, b);
-	else if (ft_strncmp(line, "pa\n", 4) == 0)
-		pa(a, b);
-	else if (ft_strncmp(line, "pb\n", 4) == 0)
-		pb(b, a);
-	else if (ft_strncmp(line, "ra\n", 4) == 0)
-		ra(a);
-	else if (ft_strncmp(line, "rb\n", 4) == 0)
-		rb(b);
-	else if (ft_strncmp(line, "rr\n", 4) == 0)
-		rr(a, b);
-	else if (ft_strncmp(line, "rra\n", 5) == 0)
-		rra(a);
-	else if (ft_strncmp(line, "rrb\n", 5) == 0)
-		rrb(b);
-	else if (ft_strncmp(line, "rrr\n", 5) == 0)
-		rrr(a, b);
+    if (ft_strncmp(line, "sa\n", 3) == 0)
+		sa(*a);
+	else if (ft_strncmp(line, "sb\n", 3) == 0)
+		sb(*b);
+	else if (ft_strncmp(line, "ss\n", 3) == 0)
+		ss(*a, *b);
+	else if (ft_strncmp(line, "pa\n", 3) == 0)
+		pa(*b, *a);
+	else if (ft_strncmp(line, "pb\n", 3) == 0)
+		pb(*a, *b);
+	else if (ft_strncmp(line, "ra\n", 3) == 0)
+		ra(*a);
+	else if (ft_strncmp(line, "rb\n", 3) == 0)
+		rb(*b);
+	else if (ft_strncmp(line, "rr\n", 3) == 0)
+		rr(*a, *b);
+	else if (ft_strncmp(line, "rra\n", 4) == 0)
+		rra(*a);
+	else if (ft_strncmp(line, "rrb\n", 4) == 0)
+		rrb(*b);
+	else if (ft_strncmp(line, "rrr\n", 4) == 0)
+		rrr(*a, *b);
     else
         return (0);
     return (1);
@@ -94,11 +94,10 @@ void process_stack(t_stack **a, t_stack **b)
 {
     char    *line;
     
-    if (!a);
-        return ;
     line = get_next_line(0);
     while (line)
     {
+		printf("%s", line);
         if(!set_instra(line, &a, &b))
             {
                 free(line);
@@ -107,6 +106,4 @@ void process_stack(t_stack **a, t_stack **b)
         free(line);
         line = get_next_line(0);
     }
-        return ;
-    set_instra(line, &a, &b);
 }

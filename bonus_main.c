@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/27 15:23:40 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/27 18:26:43 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,34 +102,29 @@ int	main(int ac, char **av)
 		p_err();
 		return (ft_lstclear(&a), 1);
 	}
+	
 	process_stack(&a, &b);
-	if (is_sorted(a))
+
+	
+	t_stack *tmp;
+	tmp = a;
+	while (tmp)
+	{
+	    printf("%d\n", tmp->nb);
+	    tmp = tmp->next;
+	}
+	// tmp = b;
+	// while (tmp)
+	// {
+	//     printf("%d\n", tmp->nb);
+	//     tmp = tmp->next;
+	// }
+
+
+	
+	if (is_sorted(a) && !b)
 		write(1, "OK\n", 3);
-		
-		// len = size(a);
-		// if (size(a) == 2)
-		// 	sa(&a);
-		// else if (size(a) == 3)
-		// 	tiny_sort(&a);
-		// else
-		// 	push_swap(&a, &len);
-		
 	else 
 		write(1, "KO\n", 3);
-	return (ft_lstclear(&a), 0);
-}
-
-
-void	*free_array(char **s, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len)
-	{
-		free(s[i]);
-		i++;
-	}
-	free(s);
-	return (NULL);
+	return (ft_lstclear(&a), ft_lstclear(&b), 0);
 }

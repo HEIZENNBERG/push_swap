@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 16:02:30 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 20:24:22 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/27 17:36:45 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,8 @@ static void	set_prefix(char *dst, char const *src, size_t i, size_t s_len)
 	dst[i] = ' ';
 }
 
-static size_t	ft_strlen(const char *s)
-{
-	size_t	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-static char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char	*dest;
 	size_t	i;

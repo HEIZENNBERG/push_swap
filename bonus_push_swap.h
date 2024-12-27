@@ -33,7 +33,7 @@ typedef struct s_stack
 	int				is_above_med;
 }t_stack;
 
-void	reverse(t_stack **head);
+void	reverse(t_stack	**head);
 void	rotate(t_stack **head);
 void	push(t_stack **src, t_stack **dst);
 void	swap(t_stack **head);
@@ -53,11 +53,14 @@ void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 
+char	*ft_strdup(const char *s1);
+char	*get_next_line(int fd);
 int		ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 void	process_stack(t_stack **a, t_stack **b);
 char	*ft_strjoin(char *s1, char *s2);
 int		is_valid(char *str);
+int		size(t_stack *a);
 int		check_duplicate(t_stack *a, int nb);
 t_stack	*min(t_stack *a);
 void	fill_a(t_stack **a, t_stack **b, int *len_a, int *len_b);
@@ -65,7 +68,6 @@ t_stack	*get_low_cost(t_stack *a);
 void	set_cost(t_stack *b, int len_a, int len_b);
 void	set_target_node(t_stack *a, t_stack *b);
 void	set_index(t_stack *a, int med);
-int		size(t_stack *a);
 int		is_sorted(t_stack *a);
 t_stack	*tail(t_stack *tmp);
 long	ft_atol(const char *nptr);

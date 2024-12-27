@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 20:05:19 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 20:27:12 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/27 15:45:23 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char	*get__line(char *buff)
 	return (dest);
 }
 
-static	*allocate(size_t size)
+static char	*allocate(size_t size)
 {
 	char	*buf;
 

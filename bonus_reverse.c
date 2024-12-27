@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_reverse_instra.c                             :+:      :+:    :+:   */
+/*   bonus_reverse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:44:09 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 20:22:44 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/27 15:41:57 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,15 @@ void	reverse(t_stack **head)
 void	rra(t_stack **a)
 {
 	reverse(a);
-	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **b)
 {
 	reverse(b);
-	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
 	reverse(a);
 	reverse(b);
-	write(1, "rrr\n", 4);
 }
