@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   bonus_stack_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:19:01 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 21:01:48 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/27 15:06:51 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus_push_swap.h"
 
 t_stack	*node_init(char *str)
 {
@@ -24,7 +24,7 @@ t_stack	*node_init(char *str)
 		return (NULL);
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (!node)
-		return ( NULL);
+		return (NULL);
 	node->nb = nb;
 	node->cost = 0;
 	node->index = 0;

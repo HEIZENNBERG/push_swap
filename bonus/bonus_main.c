@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   bonus_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/27 15:21:28 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/27 15:23:40 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus_push_swap.h"
 
 int	is_valid(char *str)
 {
@@ -51,7 +51,7 @@ char	*join_arguments(char **av)
 	return (str);
 }
 
-t_stack	*create_stack(char **av)
+t_stack	*create_t_stack(char **av)
 {
 	t_stack	*list;
 	t_stack	*node;
@@ -88,27 +88,48 @@ static void	p_err(void)
 int	main(int ac, char **av)
 {
 	t_stack	*a;
+	t_stack *b;
 	int		len;
 
 	if (ac < 2)
 		return (0);
 	else if (ac == 2 && !av[1][0])
 		return (p_err(), 1);
-	a = create_stack(av);
+	a = create_t_stack(av);
+	b = NULL;
 	if (!a)
 	{
 		p_err();
 		return (ft_lstclear(&a), 1);
 	}
-	if (is_sorted(a) == 0)
-	{
-		len = size(a);
-		if (size(a) == 2)
-			sa(&a);
-		else if (size(a) == 3)
-			tiny_sort(&a);
-		else
-			push_swap(&a, &len);
-	}
+	process_stack(&a, &b);
+	if (is_sorted(a))
+		write(1, "OK\n", 3);
+		
+		// len = size(a);
+		// if (size(a) == 2)
+		// 	sa(&a);
+		// else if (size(a) == 3)
+		// 	tiny_sort(&a);
+		// else
+		// 	push_swap(&a, &len);
+		
+	else 
+		write(1, "KO\n", 3);
 	return (ft_lstclear(&a), 0);
+}
+
+
+void	*free_array(char **s, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+	return (NULL);
 }
