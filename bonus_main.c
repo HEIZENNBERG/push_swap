@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/27 18:26:43 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/28 17:57:41 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static void	p_err(void)
 int	main(int ac, char **av)
 {
 	t_stack	*a;
-	t_stack *b;
+	t_stack	*b;
 	int		len;
 
 	if (ac < 2)
@@ -102,29 +102,10 @@ int	main(int ac, char **av)
 		p_err();
 		return (ft_lstclear(&a), 1);
 	}
-	
 	process_stack(&a, &b);
-
-	
-	t_stack *tmp;
-	tmp = a;
-	while (tmp)
-	{
-	    printf("%d\n", tmp->nb);
-	    tmp = tmp->next;
-	}
-	// tmp = b;
-	// while (tmp)
-	// {
-	//     printf("%d\n", tmp->nb);
-	//     tmp = tmp->next;
-	// }
-
-
-	
 	if (is_sorted(a) && !b)
 		write(1, "OK\n", 3);
-	else 
-		write(1, "KO\n", 3);
-	return (ft_lstclear(&a), ft_lstclear(&b), 0);
+	else
+		write(2, "KO\n", 3);
+	return (ft_lstclear(&a), 0);
 }

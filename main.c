@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/27 18:31:25 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/28 16:30:17 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,12 +110,13 @@ int	main(int ac, char **av)
 		else
 			push_swap(&a, &len);
 	}
-	t_stack *tmp;
-	tmp = a;
-	while (tmp)
-	{
-	    printf("%d\n", tmp->nb);
-	    tmp = tmp->next;
-	}
 	return (ft_lstclear(&a), 0);
 }
+
+	// t_stack *tmp;
+	// tmp = a;
+	// while (tmp)
+	// {
+	//     printf("%d\n", tmp->nb);
+	//     tmp = tmp->next;
+	// }

@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 14:13:04 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 12:45:12 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/28 17:55:05 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ static int	fill_array(t_stack *a, int *arr, int *len)
 		a = a->next;
 		i++;
 	}
-	med_sort_array(arr, len);
-	return (arr[i / 2]);
+	return (med_sort_array(arr, len));
 }
 
 static void	prepare_t_stacks(t_stack *a, t_stack *b, int len_a, int len_b)
@@ -102,10 +101,3 @@ void	push_swap(t_stack **a, int *len_a)
 	(set_index(*a, *len_a / 2), put_min_on_top(a));
 	(free(arr), ft_lstclear(&b));
 }
-	// t_stack *tmp;
-	// tmp = *a;
-	// while (tmp)
-	// {
-	//     printf("%d\n", tmp->nb);
-	//     tmp = tmp->next;
-	// }

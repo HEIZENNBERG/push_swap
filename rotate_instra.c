@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:29:44 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 12:51:03 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/28 17:17:18 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ra(t_stack **a)
 void	rb(t_stack **b)
 {
 	rotate(b);
-	write(1, "ra\n", 3);
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_stack **a, t_stack **b)

@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:19:01 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 21:01:48 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/28 18:01:05 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_stack	*node_init(char *str)
 		return (NULL);
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (!node)
-		return ( NULL);
+		return (NULL);
 	node->nb = nb;
 	node->cost = 0;
 	node->index = 0;
