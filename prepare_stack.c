@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:49:56 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/29 11:04:39 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/29 13:28:20 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	set_index(t_stack *a, int med)
 	i = 0;
 	if (!a)
 		return ;
-	while (a && a->next)
+	while (a)
 	{
 		a->index = i;
 		if (i <= med)
