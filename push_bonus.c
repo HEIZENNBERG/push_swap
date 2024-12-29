@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_swap.c                                       :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/20 14:58:32 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/27 15:41:48 by onajem           ###   ########.fr       */
+/*   Created: 2024/12/20 20:22:58 by onajem            #+#    #+#             */
+/*   Updated: 2024/12/28 18:54:33 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus_push_swap.h"
+#include "push_swap_bonus.h"
 
-void	swap(t_stack **head)
+void	push(t_stack **src, t_stack **dst)
 {
 	t_stack	*tmp;
 
-	if (!head || !(*head) || !((*head)->next))
+	if (!dst || !src || !(*src))
 		return ;
-	tmp = (*head);
-	(*head) = (*head)->next;
-	tmp->next = (*head)->next;
-	(*head)->next = tmp;
+	tmp = NULL;
+	tmp = (*src)->next;
+	(*src)->next = (*dst);
+	(*dst) = (*src);
+	(*src) = tmp;
 }
 
-void	sa(t_stack **a)
+void	pa(t_stack **b, t_stack **a)
 {
-	swap(a);
+	push(b, a);
 }
 
-void	sb(t_stack **b)
+void	pb(t_stack **a, t_stack **b)
 {
-	swap(b);
-}
-
-void	ss(t_stack **a, t_stack **b)
-{
-	sa(a);
-	sb(b);
+	push(a, b);
 }

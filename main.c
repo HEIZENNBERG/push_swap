@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/28 16:30:17 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/29 11:10:24 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	is_valid(char *str)
 	return (1);
 }
 
-char	*join_arguments(char **av)
+static char	*join_arguments(char **av)
 {
 	char	*str;
 	size_t	i;
@@ -51,7 +51,7 @@ char	*join_arguments(char **av)
 	return (str);
 }
 
-t_stack	*create_stack(char **av)
+static t_stack	*create_stack(char **av)
 {
 	t_stack	*list;
 	t_stack	*node;
@@ -112,11 +112,3 @@ int	main(int ac, char **av)
 	}
 	return (ft_lstclear(&a), 0);
 }
-
-	// t_stack *tmp;
-	// tmp = a;
-	// while (tmp)
-	// {
-	//     printf("%d\n", tmp->nb);
-	//     tmp = tmp->next;
-	// }

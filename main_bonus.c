@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_main.c                                       :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/28 17:57:41 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/29 11:00:44 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus_push_swap.h"
+#include "push_swap_bonus.h"
 
 int	is_valid(char *str)
 {
@@ -35,7 +35,7 @@ int	is_valid(char *str)
 	return (1);
 }
 
-char	*join_arguments(char **av)
+static char	*join_arguments(char **av)
 {
 	char	*str;
 	size_t	i;
@@ -51,7 +51,7 @@ char	*join_arguments(char **av)
 	return (str);
 }
 
-t_stack	*create_t_stack(char **av)
+static t_stack	*create_t_stack(char **av)
 {
 	t_stack	*list;
 	t_stack	*node;
@@ -89,7 +89,6 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		len;
 
 	if (ac < 2)
 		return (0);

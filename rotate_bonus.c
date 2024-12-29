@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_push.c                                       :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/20 20:22:58 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/27 15:42:00 by onajem           ###   ########.fr       */
+/*   Created: 2024/12/20 20:29:44 by onajem            #+#    #+#             */
+/*   Updated: 2024/12/28 18:54:07 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus_push_swap.h"
+#include "push_swap_bonus.h"
 
-void	push(t_stack **src, t_stack **dst)
+void	rotate(t_stack **head)
 {
 	t_stack	*tmp;
+	t_stack	*last;
 
-	if (!dst || !src || !(*src))
+	if (!head || !(*head) || !(*head)->next)
 		return ;
-	tmp = NULL;
-	tmp = (*src)->next;
-	(*src)->next = (*dst);
-	(*dst) = (*src);
-	(*src) = tmp;
+	tmp = *head;
+	(*head) = (*head)->next;
+	last = tail(*head);
+	last->next = tmp;
+	tmp->next = NULL;
 }
 
-void	pa(t_stack **b, t_stack **a)
+void	ra(t_stack **a)
 {
-	push(b, a);
+	rotate(a);
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	rb(t_stack **b)
 {
-	push(a, b);
+	rotate(b);
+}
+
+void	rr(t_stack **a, t_stack **b)
+{
+	rotate(a);
+	rotate(b);
 }

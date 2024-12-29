@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 14:13:04 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/28 17:55:05 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/29 11:11:13 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	push_swap(t_stack **a, int *len_a)
 		return ;
 	med = fill_array(*a, arr, len_a);
 	len_b = 0;
+	b = NULL;
 	while (*len_a > 3 && is_sorted(*a) == 0)
 	{
 		pb(a, &b);

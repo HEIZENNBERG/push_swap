@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*	                                                           				  */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 20:56:41 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 12:46:58 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/28 19:53:17 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BONUS_PUSH_SWAP_H
-# define BONUS_PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <limits.h>
 # include <unistd.h>
 

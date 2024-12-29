@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 20:56:41 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/26 12:46:58 by onajem           ###   ########.fr       */
+/*   Updated: 2024/12/28 19:53:00 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <limits.h>
 # include <unistd.h>
 
