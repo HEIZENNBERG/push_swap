@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2025/01/02 15:30:59 by onajem           ###   ########.fr       */
+/*   Updated: 2025/01/02 16:19:07 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*join_arguments(char **av)
 	i = 1;
 	while (av[i])
 	{
-		if (av[i][0] == '\0')
+		if (is_valid_arg(av[i]) == 0)
 			return (NULL);
 		str = ft_strjoin(str, av[i]);
 		str = ft_strjoin(str, " ");

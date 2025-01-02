@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2025/01/02 15:30:21 by onajem           ###   ########.fr       */
+/*   Updated: 2025/01/02 16:14:29 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*join_arguments(char **av)
 	i = 1;
 	while (av[i])
 	{
-		if (av[i][0] == '\0')
+		if (is_valid_arg(av[i]) == 0)
 			return (NULL);
 		str = ft_strjoin(str, av[i]);
 		str = ft_strjoin(str, " ");
@@ -63,10 +63,10 @@ static t_stack	*create_stack(char **av)
 
 	list = NULL;
 	str = join_arguments(av);
+	if (!str)
+		return (NULL);
 	av = ft_split(str, ' ', &words);
 	free(str);
-	if (!av)
-		return (NULL);
 	i = words;
 	while (i > 0)
 	{

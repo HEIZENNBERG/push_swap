@@ -52,6 +52,7 @@ void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 
+int		is_valid_arg(char *str);
 char	*ft_strdup(const char *s1);
 char	*get_next_line(int fd);
 int		ft_strchr(const char *s, int c);

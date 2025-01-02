@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 16:02:30 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/28 18:53:54 by onajem           ###   ########.fr       */
+/*   Updated: 2025/01/02 16:24:40 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,24 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	dest[len_s1 + len_s2] = '\0';
 	return (free(s1), dest);
+}
+
+int	is_valid_arg(char *str)
+{
+	int	i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (str[i] == '-' || str[i] == '+')
+			return (1);
+		if (str[i] >= '0' && str[i] <= '9')
+			return (1);
+		i++;
+	}
+	return (0);
 }

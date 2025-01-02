@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:19:01 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/28 18:01:05 by onajem           ###   ########.fr       */
+/*   Updated: 2025/01/02 15:47:57 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_stack	*node_init(char *str)
 	t_stack	*node;
 	long	nb;
 
-	if (!str || !is_valid(str))
+	if (!is_valid(str) || !str)
 		return (NULL);
 	nb = ft_atol(str);
 	if (nb > INT_MAX || nb < INT_MIN)

@@ -48,6 +48,7 @@ void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 
+int		is_valid_arg(char *str);
 char	*ft_strjoin(char *s1, char *s2);
 int		is_valid(char *str);
 int		check_duplicate(t_stack *a, int nb);

@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 20:27:18 by onajem            #+#    #+#             */
-/*   Updated: 2024/12/28 20:52:05 by onajem           ###   ########.fr       */
+/*   Updated: 2025/01/02 16:24:18 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,24 @@ void	fill_a(t_stack **a, t_stack **b, int *len_a, int *len_b)
 	pa(b, a);
 	*len_a = size(*a);
 	*len_b = size(*b);
+}
+
+int	is_valid_arg(char *str)
+{
+	int	i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (str[i] == '-' || str[i] == '+')
+			return (1);
+		if (str[i] >= '0' && str[i] <= '9')
+			return (1);
+		i++;
+	}
+	return (0);
 }
