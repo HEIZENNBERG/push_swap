@@ -6,7 +6,7 @@
 /*   By: onajem <onajem@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 21:00:07 by onajem            #+#    #+#             */
-/*   Updated: 2025/01/02 15:12:42 by onajem           ###   ########.fr       */
+/*   Updated: 2025/01/02 15:30:59 by onajem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ static t_stack	*create_t_stack(char **av)
 	list = NULL;
 	str = join_arguments(av);
 	av = ft_split(str, ' ', &words);
+	free(str);
 	if (!av)
 		return (NULL);
 	i = words;
@@ -78,7 +79,7 @@ static t_stack	*create_t_stack(char **av)
 			return (ft_lstclear(&list), free_array(av, words),
 				free(node), NULL);
 	}
-	return (free_array(av, words), free(str), list);
+	return (free_array(av, words), list);
 }
 
 static void	p_err(void)

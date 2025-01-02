@@ -31,10 +31,10 @@ all : ${NAME}
 	${CC} ${GFLAGS} -c $< -o $@ 
 
 ${NAME} : ${OBJ}
-	${CC} ${OBJ} -o ${NAME}
+	${CC} -fsanitize=address ${OBJ} -o ${NAME}
 
 bonus: ${OBJ_B}
-	${CC} ${OBJ_B} -o ${NAME_B}
+	${CC} -fsanitize=address ${OBJ_B} -o ${NAME_B}
 
 clean : 
 	${RM} ${OBJ} ${OBJ_B} 
